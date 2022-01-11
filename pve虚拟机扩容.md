@@ -35,3 +35,31 @@
 >
 > 
 
+# PVE系统挂载新硬盘
+
+> ~~为了挂载一个新硬盘给pve池,导致pve开机卡死,折腾了一下午~~
+
+## 给我整崩溃的方法
+
+> https://www.moewah.com/archives/2546.html
+>
+> > 到一半重启后进不去了,下面都是解决/etc/fstab文件和挂载修复的问题
+> >
+> > https://www.csdn.net/tags/NtTaUgzsMDU0NDAtYmxvZwO0O0OO0O0O.html
+> >
+> > https://blog.csdn.net/DL_ChenBo/article/details/53164882
+> >
+> > [【linux】解决系统卡在ubuntu loading initial ramdisk_six_water的博客-CSDN博客](https://blog.csdn.net/six_water/article/details/103593515)
+> >
+> > grub下进pve系统 grub E编辑模式下 修改grub文件中的 `ro quiet amd......(后面这一串都删)....` 改成上面参考中的 `rw init=/bin/bash`
+> >
+> > > 但后来`真正解决问题`的居然是`从非UEFI启动`	~~我人都傻了~~
+
+## 正常运行的方法
+
+> https://www.cnblogs.com/xiaobo060/p/12829535.html
+>
+> 改完`/etc/fstab`记得用重新挂载命令
+>
+> ~~否则就等着在grub下死活进不去系统吧~~
+
